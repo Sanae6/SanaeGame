@@ -20,6 +20,11 @@
 	<GLFW/glfw3.h>
 	"window.hh"
 
-1548564583 c:\users\sanae\documents\sanaegame\src\window.hh
+1548602503 c:\users\sanae\documents\sanaegame\src\window.hh
 	<GLFW/glfw3.h>
+
+1548600340 source:c:\users\sanae\documents\sanaegame\res\res.rc
+	"resource.h"
+
+1548600625 c:\users\sanae\documents\sanaegame\res\resource.h
 
