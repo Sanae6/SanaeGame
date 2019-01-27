@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1548550437 source:c:\users\sanae\documents\sanaegame\main.cpp
+	<iostream>
+	<GLFW/glfw3.h>
+
+1548562193 source:c:\users\sanae\documents\sanaegame\lib\window.cpp
+	<GLFW/glfw3.h>
+
+1548565063 source:c:\users\sanae\documents\sanaegame\src\main.cpp
+	<iostream>
+	<string>
+	<GLFW/glfw3.h>
+	<GL/gl.h>
+	"window.hh"
+
+1548563514 c:\users\sanae\documents\sanaegame\src\window.cpp
+	<GLFW/glfw3.h>
+
+1548564543 source:c:\users\sanae\documents\sanaegame\src\window.cpp
+	<GLFW/glfw3.h>
+	"window.hh"
+
+1548564583 c:\users\sanae\documents\sanaegame\src\window.hh
+	<GLFW/glfw3.h>
+
