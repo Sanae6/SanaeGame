@@ -33,7 +33,12 @@
 		<Unit filename="res/sanae.ico" />
 		<Unit filename="src/content.cpp" />
 		<Unit filename="src/content.hh" />
+		<Unit filename="src/events.hh" />
+		<Unit filename="src/game.cpp" />
+		<Unit filename="src/game.hh" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/scene.cpp" />
+		<Unit filename="src/scene.hh" />
 		<Unit filename="src/window.cpp" />
 		<Unit filename="src/window.hh" />
 		<Extensions>

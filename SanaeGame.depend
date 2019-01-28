@@ -6,7 +6,7 @@
 1548562193 source:c:\users\sanae\documents\sanaegame\lib\window.cpp
 	<GLFW/glfw3.h>
 
-1548565063 source:c:\users\sanae\documents\sanaegame\src\main.cpp
+1548614088 source:c:\users\sanae\documents\sanaegame\src\main.cpp
 	<iostream>
 	<string>
 	<GLFW/glfw3.h>
@@ -16,15 +16,26 @@
 1548563514 c:\users\sanae\documents\sanaegame\src\window.cpp
 	<GLFW/glfw3.h>
 
-1548564543 source:c:\users\sanae\documents\sanaegame\src\window.cpp
+1548614106 source:c:\users\sanae\documents\sanaegame\src\window.cpp
 	<GLFW/glfw3.h>
 	"window.hh"
 
-1548602503 c:\users\sanae\documents\sanaegame\src\window.hh
+1548614073 c:\users\sanae\documents\sanaegame\src\window.hh
 	<GLFW/glfw3.h>
 
 1548600340 source:c:\users\sanae\documents\sanaegame\res\res.rc
 	"resource.h"
 
 1548600625 c:\users\sanae\documents\sanaegame\res\resource.h
+
+1548614088 source:c:\users\sanae\documents\sanaegame\src\content.cpp
+
+1548645830 source:c:\users\sanae\documents\sanaegame\src\game.cpp
+	"scene.hh"
+	<GL/glu.h>
+
+1548645819 c:\users\sanae\documents\sanaegame\src\scene.hh
+
+1548623433 source:c:\users\sanae\documents\sanaegame\src\scene.cpp
+	"scene.hh"
 

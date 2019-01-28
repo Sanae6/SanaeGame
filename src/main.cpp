@@ -4,48 +4,104 @@
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
-#include "window.hh"
+int WIDTH = 800;
+int HEIGHT = 800;
+const char* TITLE = "Minecraft";
+int FPS = 60;
 
+#include "window.hh"
+#include "scene.hh"
+#include "game.hh"
 using namespace std;
 
 void log(std::string text){
     cout << text << endl;
 }
 
-int main()
-{
+int time_delta = 1000/FPS;
+//Scene* state;
+Window window;
+struct Game{
+    //
+    Game();
+    void render();
+    void update();
+    void loop();
+};
+
+Game::Game(){
     if (!glfwInit()){
-        log("GLFW Died lol");
-        return 1;
+        log("Could not start GL");
+        throw exception();
     }
-    Window window(800,600,"Epic");
-    if (window.getwin() == 0){
+    glfwWindowHint(GLFW_RESIZABLE,GL_FALSE);
+    Window wndow(WIDTH,HEIGHT,TITLE);
+    window = wndow;
+    glfwMakeContextCurrent(window.win);
+    glfwShowWindow(window.win);
+    if (window.win == 0){
         log("Window didn't create :pensive:");
         glfwTerminate();
-        return 1;
+        exit(1);
     }
-    glfwMakeContextCurrent(window.getwin());
-    glfwShowWindow(window.getwin());
+    //scene = GameScene()
+}
 
-    glClearColor(0.0f,0.0f,0.0f,1.0f);
+int main()
+{
+    Game game();
+
     while(!window.closed()){
         glClear(GL_COLOR_BUFFER_BIT);
         glfwPollEvents();
-        glBegin(GL_TRIANGLES);
-        glColor3f(1.0,0.0,0.0);
-        glVertex2d(0.5,0.5);//top right
-        glColor3f(1.0,1.0,0.0);
-        glVertex2d(-0.5,-0.5);//bottom left
-        glColor3f(0.0,0.0,1.0);
-        glVertex2d(-0.5,0.5);//top left
-        glColor3f(1.0,0.0,0.0);
-        glVertex2d(0.5,0.5);//top right
-        glColor3f(0.0,1.0,0.0);
-        glVertex2d(0.5,-0.5);//bottom right
-        glColor3f(1.0,1.0,0.0);
-        glVertex2d(-0.5,-0.5);//bottom left
+        game.loop();
+        // White side - BACK
+        glBegin(GL_POLYGON);
+        glColor3f(   1.0,  1.0, 1.0 );
+        glVertex3f(  0.5, -0.5, 0.5 );
+        glVertex3f(  0.5,  0.5, 0.5 );
+        glVertex3f( -0.5,  0.5, 0.5 );
+        glVertex3f( -0.5, -0.5, 0.5 );
         glEnd();
-        glfwSwapBuffers(window.getwin());
+
+        // Purple side - RIGHT
+        glBegin(GL_POLYGON);
+        glColor3f(  1.0,  0.0,  1.0 );
+        glVertex3f( 0.5, -0.5, -0.5 );
+        glVertex3f( 0.5,  0.5, -0.5 );
+        glVertex3f( 0.5,  0.5,  0.5 );
+        glVertex3f( 0.5, -0.5,  0.5 );
+        glEnd();
+
+        // Green side - LEFT
+        glBegin(GL_POLYGON);
+        glColor3f(   0.0,  1.0,  0.0 );
+        glVertex3f( -0.5, -0.5,  0.5 );
+        glVertex3f( -0.5,  0.5,  0.5 );
+        glVertex3f( -0.5,  0.5, -0.5 );
+        glVertex3f( -0.5, -0.5, -0.5 );
+        glEnd();
+
+        // Blue side - TOP
+        glBegin(GL_POLYGON);
+        glColor3f(   0.0,  0.0,  1.0 );
+        glVertex3f(  0.5,  0.5,  0.5 );
+        glVertex3f(  0.5,  0.5, -0.5 );
+        glVertex3f( -0.5,  0.5, -0.5 );
+        glVertex3f( -0.5,  0.5,  0.5 );
+        glEnd();
+
+        // Red side - BOTTOM
+        glBegin(GL_POLYGON);
+        glColor3f(   1.0,  0.0,  0.0 );
+        glVertex3f(  0.5, -0.5, -0.5 );
+        glVertex3f(  0.5, -0.5,  0.5 );
+        glVertex3f( -0.5, -0.5,  0.5 );
+        glVertex3f( -0.5, -0.5, -0.5 );
+        glEnd();
+
+        glFlush();
+        glfwSwapBuffers(window.win);
     }
 
     log("Frick Yes");
